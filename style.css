@@ -3,11 +3,15 @@
 html, body {
     margin: 0;
     padding: 0;
+    
   }
   
   html {
     font-size: 10px;
-    background-color: #a9a9a9;
+    background: url("./img/235.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
   
   body {
@@ -19,12 +23,12 @@ html, body {
   
   h1, h2, h3 {
     font-family: 'Papyrus', fantasy;
-    color: #2a2a2a;
+    color: #000;
   }
   
   p, input, li {
     font-family: 'Arial', sans-serif;
-    color: #2a2a2a;
+    color: #000;
   }
   
   h1 {
@@ -57,7 +61,7 @@ html, body {
   
   nav {
     height: 50px;
-    background-color: #4e4ed7;
+    background-color: #d63737c0;
     display: flex;
     margin-bottom: 10px;
   }
@@ -121,7 +125,7 @@ html, body {
   aside {
     flex: 1;
     margin-left: 10px;
-    background-color: #4e4ed7;
+    padding: 15px;
   }
   
   aside li {
@@ -130,4 +134,13 @@ html, body {
   
   footer {
     margin-top: 10px;
+    background-color: #d63737c0;
   }
+
+  iframe{
+    object-position: center;
+  }
+
+.fondblanc {
+    background-color: #d3c5c5bc;
+}
