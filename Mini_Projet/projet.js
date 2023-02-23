@@ -206,115 +206,97 @@ function getWeatherCode(code){
 
     switch(code) {
         case 0:
-            code_img = 111;
+            code_img = 100;    //f101
             nom = "clear sky"
             break;
         case 1:
-            code_img = 111;
+            code_img = 102;    //f103
             nom = "mainly clear"
             break;
         case 2:
-            code_img = 111;
+            code_img = 101;    //f102
             nom = "partly cloudy"
             break;
         case 3:
-            code_img = 111;
+            code_img = 104;    //f105
             nom = "overcast"
             break; 
         case 45:
-            code_img = 111;
+            code_img = 2003;    //f1ad
             nom = "fog"
             break;
         case 48:
-            code_img = 111;
-            nom = "depositing rime fog"
+            code_img = 510;     //f136
+            nom = "brouillard givrant" //depositing rime fog
             break;
         case 51:
-            code_img = 111;
-            nom = "drizzle light"
-            break;
         case 53:
-            code_img = 111;
-            nom = "drizzle moderate"
-            break;
         case 55:
-            code_img = 111;
-            nom = "drizzle dense"
+            code_img = 309;     //f113
+            nom = "bruine" //drizzle
             break;
         case 56:
-            code_img = 111;
-            nom = "freezing drizzle light"
-            break;
         case 57:
-            code_img = 111;
-            nom = "freezing drizzle dense"
+            code_img = 404;     //f124
+            nom = "freezing drizzle"
             break;
         case 61:
-            code_img = 111;
+            code_img = 305;     //f10f
             nom = "slight rain"
             break;
         case 63:
-            code_img = 111;
+            code_img = 306;     //f110
             nom = "moderate rain"
             break;
         case 65:
-            code_img = 111;
+            code_img = 307;     //f111
             nom = "heavy rain"
             break;
         case 66:
-            code_img = 111;
-            nom = "light freezing rain"
-            break;
         case 67:
-            code_img = 111;
-            nom = "heavy freezing rain"
+            code_img = 313;     //f117
+            nom = "freezing rain"
             break;
         case 71:
-            code_img = 111;
+        case 77:
+            code_img = 400;     //f120
             nom = "slight snow fall"
             break;
         case 73:
-            code_img = 111;
+            code_img = 401;     //f121
             nom = "moderate snow fall"
             break;
         case 75:
-            code_img = 111;
+            code_img = 402;     //f122
             nom = "heavy snow fall"
             break;
-        case 77:
-            code_img = 111;
-            nom = "snow grains"
-            break;
         case 80:
-            code_img = 111;
+        case 81:
+            code_img = 300;    //f10a
             nom = "slight rain shower"
             break;
-        case 81:
-            code_img = 111;
-            nom = "moderate rain shower"
-            break;
         case 82:
-            code_img = 111;
+            code_img = 301;    //f10b
             nom = "violent rain shower"
             break;
         case 85:
-            code_img = 111;
+            code_img = 406;     //f126
             nom = "slight snow shower"
             break;
         case 86:
-            code_img = 111;
+            code_img = 407;     //f127
             nom = "heavy snow shower"
             break;
         case 95:
-            code_img = 111;
+            code_img = 1043;     //f171
             nom = "slight or moderate thunderstorm"
             break;
         case 96:
-            code_img = 111;
+            code_img = 304;     //f10e
             nom = "thunderstorm w/ slight hail"
             break;
         case 99:
-            code_img = 111;
+            code_img = 2016;     //f1ba
             nom = "thunderstorm w/ heavy hail"
             break;
     }
