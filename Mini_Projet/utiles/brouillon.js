@@ -1,0 +1,1 @@
+"<table><tr><td><img src=\"./icones/"+code_img+".svg\" width=\"32\" height=\"32\"></td><td>"+nom+"</td></tr></table>"

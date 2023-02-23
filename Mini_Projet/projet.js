@@ -122,7 +122,8 @@ async function randomUsers(){
                     // ajout du nouveau marqueur
                     var marker = L.marker([lati,longi]).addTo(map);            // création et affichage du nouveau marqueur
                     // popup du marqueur
-                    marker.bindPopup("<b>"+ville+"</b><br>"+nom+" "+prenom+"<br>Température : "+tempe+" °C<br>Vitesse du vent : "+vent+"km/h<br>Code : "+code_m,keepInView = true).openPopup();
+                    var txt = getCodeMeteo(code_m);
+                    marker.bindPopup("<b>"+ville+"</b><br>"+nom+" "+prenom+"<br>"+txt+"Température : "+tempe+" °C<br>Vitesse du vent : "+vent+"km/h<br>",keepInView = true).openPopup();
                     markers[nb] = marker;                                       // ajout à la liste des marqueurs présents
 
                 } else {            // si la ville n'est pas en France métropolitaine
@@ -200,109 +201,109 @@ async function calcLatLong(v){
 /* ------------- */
 
 // récupération de la météo en fonction du code donné
-function getWeatherCode(code){
+function getCodeMeteo(code){
     let code_img;   // icone correspondante
     let nom;        // nom de la manifestation
 
     switch(code) {
         case 0:
             code_img = 100;    //f101
-            nom = "clear sky"
+            nom = "Dégagé"
             break;
         case 1:
             code_img = 102;    //f103
-            nom = "mainly clear"
+            nom = "Peu nuageux"
             break;
         case 2:
             code_img = 101;    //f102
-            nom = "partly cloudy"
+            nom = "Partiellement nuageux"
             break;
         case 3:
             code_img = 104;    //f105
-            nom = "overcast"
+            nom = "Couvert"
             break; 
         case 45:
             code_img = 2003;    //f1ad
-            nom = "fog"
+            nom = "Brouillard"
             break;
         case 48:
             code_img = 510;     //f136
-            nom = "brouillard givrant" //depositing rime fog
+            nom = "Brouillard givrant" //depositing rime fog
             break;
         case 51:
         case 53:
         case 55:
             code_img = 309;     //f113
-            nom = "bruine" //drizzle
+            nom = "Bruine" //drizzle
             break;
         case 56:
         case 57:
             code_img = 404;     //f124
-            nom = "freezing drizzle"
+            nom = "Bruine givrante"
             break;
         case 61:
             code_img = 305;     //f10f
-            nom = "slight rain"
+            nom = "Pluie légère"
             break;
         case 63:
             code_img = 306;     //f110
-            nom = "moderate rain"
+            nom = "Pluie modérée"
             break;
         case 65:
             code_img = 307;     //f111
-            nom = "heavy rain"
+            nom = "Pluie forte"
             break;
         case 66:
         case 67:
             code_img = 313;     //f117
-            nom = "freezing rain"
+            nom = "Pluie givrante"
             break;
         case 71:
         case 77:
             code_img = 400;     //f120
-            nom = "slight snow fall"
+            nom = "Chutes de neige légères"
             break;
         case 73:
             code_img = 401;     //f121
-            nom = "moderate snow fall"
+            nom = "Chutes de neige modérées"
             break;
         case 75:
             code_img = 402;     //f122
-            nom = "heavy snow fall"
+            nom = "Chutes de neige fortes"
             break;
         case 80:
         case 81:
             code_img = 300;    //f10a
-            nom = "slight rain shower"
+            nom = "Cluie légère ensoleillée"
             break;
         case 82:
             code_img = 301;    //f10b
-            nom = "violent rain shower"
+            nom = "Cluie forte ensoleillée"
             break;
         case 85:
             code_img = 406;     //f126
-            nom = "slight snow shower"
+            nom = "Chutes de neige légères ensoleillées"
             break;
         case 86:
             code_img = 407;     //f127
-            nom = "heavy snow shower"
+            nom = "Chutes de neige fortes ensoleillées"
             break;
         case 95:
             code_img = 1043;     //f171
-            nom = "slight or moderate thunderstorm"
+            nom = "Orage faible à moyen"
             break;
         case 96:
             code_img = 304;     //f10e
-            nom = "thunderstorm w/ slight hail"
+            nom = "Orage avec grèle faible"
             break;
         case 99:
             code_img = 2016;     //f1ba
-            nom = "thunderstorm w/ heavy hail"
+            nom = "Orage avec grèle forte"
             break;
     }
         
-
-    return "texte à mettre dans le pins"
+    return "<table><tr><td><img src=\"./icones/"+code_img+".svg\" width=\"16\" height=\"16\"></td><td>"+nom+"</td></tr></table>"
+    
 }
 
 
