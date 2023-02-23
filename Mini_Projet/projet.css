@@ -1,0 +1,11 @@
+
+/* CSS pour Leaflet */
+#map { 
+    width: 800px; 
+    height: 800px;
+}
+
+/* CSS layout */
+#layoutTable {
+    height: 300px;
+}

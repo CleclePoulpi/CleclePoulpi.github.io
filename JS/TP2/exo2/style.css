@@ -1,0 +1,13 @@
+#monCanvas {
+    width:100px; 
+    height:100px;
+    padding: 1;
+    border: 1px solid #000000;
+}
+
+#carre {
+    border-color:red;
+    border-style: solid; 
+    height: 50px;
+    width: 50px
+}

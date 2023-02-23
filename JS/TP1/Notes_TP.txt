@@ -1,0 +1,23 @@
+            TP JS 1
+
+        1er exo 
+Doc 1 : déclaration de l'alerte dans le script et appel "en dur" dedans
+Doc 2 : déclaration de l'alerte dans le script et appel dans le body au chargement de la page (mot clé "onload")
+    onload = "fonction()" permet d'appeler la fonction après le chargement de la page, ce qui permet au navigateur d'attendre que tous
+    les fochiers aient été chargés, et non pas au moment de l'exécution du script
+Doc 3 : déclaration de l'alerte dans le script et appel dans le script également au chargement de la page
+    window.onload = fonction permet également d'attendre le chargement de tous les fichiers avant d'exécuter la fonction
+    /!\ pas de parenthèses !!
+
+        2e exo
+var a = 1;  // valable globalement, modifications valables uniquement dans l'instance en cours d'exécution, pas de réécriture si déjà créée
+c = 3;      // modifie variable globalement
+let d = 1;  // valable dans l'instance en cours d'exécution, non modifié si réutilisé dans une autre instance
+
+Typage dynamique (cf Python)
+
+        3e exo
+voir commentaires
+
+        4e exo 
+

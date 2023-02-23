@@ -1,0 +1,12 @@
+#navlist{position:relative;}
+#navlist li{margin:0;padding:0;list-style:none;top:0;}
+#navlist li,#navlist a{height: 60px;display:block;}
+
+#img1{left:0px;width:47px;}
+#img1{background-image:url("./img/poulpi_classe.png"); border:black; border-width: 1px; width:300px; height:300px!important; background-repeat:no-repeat; background-size:300px 300px}
+
+#img2{left:0px;width:47px;}
+#img2{background-image:url("./img/poulpi_musique.png"); border:black; border-width: 1px; width:300px; height:300px!important; background-repeat:no-repeat; background-size:300px 300px}
+
+#vari{left:0px;width:47px;}
+#vari{border:black; border-width: 1px; width:300px; height:300px!important; background-repeat:no-repeat; background-size:300px 300px}

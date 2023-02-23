@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<SCRIPT LANGUAGE="Javascript" SRC="geometrie/point.js"></SCRIPT>
+		<SCRIPT LANGUAGE="Javascript" SRC="personnes/personne.js"></SCRIPT>
+		<SCRIPT LANGUAGE="Javascript" SRC="voitures/voiture.js"></SCRIPT>
+		<script type="text/javascript">
+			function init()
+			{
+				
+				canvas = document.getElementById('myCanvas');
+				for(i=1;i<10;i++)
+				{
+					for(j=1;j<10;j++)
+					{
+						point1 = new Point(20*i,20*j,canvas);
+						point1.ache();
+
+					}				
+				}
+				//============
+				console.log(personne.nom);
+				console.log(personne.nom[0]);
+				console.log(personne.age);
+				console.log(personne.interets[1]);
+				console.log(personne.bio());
+				console.log(personne.salutation());
+				//==============
+				var monObj = new Object(),
+    			str = "myString",
+    			rand = Math.random(),
+    			obj = new Object();
+
+				monObj.type              = "Syntaxe point";
+				monObj["date created"]   = "Chaîne avec un espace";
+				monObj[str]              = "Une valeur qui est une chaîne";
+				monObj[rand]             = "Nombre aléatoire";
+				monObj[obj]              = "Objet";
+				monObj[""]               = "Une chaîne vide";
+
+				console.log(monObj);	
+				console.log(monObj.obj); // version .obj non fonctionnelle ! -> se traduit par ["obj"] qui n'existe pas, faut donc faire [obj]
+
+				for(objectToInspect = obj; objectToInspect !== null; objectToInspect = Object.getPrototypeOf(objectToInspect)){
+    					console.log("[info] "+Object.getOwnPropertyNames(objectToInspect));
+  				}
+
+
+				//==============
+				var maVoiture = new Voiture('Eagle','Talon TSi', 1993);
+				//==============
+			
+				class Rectangle {
+  					constructor(hauteur, largeur) {
+    					this.hauteur = hauteur;
+    					this.largeur = largeur;
+  					}
+  					get area() {
+    					return this.calcArea();
+  					}
+
+  					calcArea() {
+    					return this.largeur * this.hauteur;
+  					}
+				}
+				const carré = new Rectangle(10, 10);
+				console.log(carré.area);
+				
+			}
+		</script>
+	</head>
+	<body onload="init()"> 
+		<canvas id="myCanvas" width="200" height="200"/>
+	</body>
+</html>

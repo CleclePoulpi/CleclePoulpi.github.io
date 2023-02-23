@@ -1,0 +1,17 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function init()
+		{
+			laDiv1=document.createElement('div');   // création élément de type div
+			laDiv1.setAttribute('id','div1');       // id changé à div1
+			laDiv2=document.getElementById('div2'); // va chercher élément d'id div2, n'existe pas donc le crée
+			laDiv1.setAttribute('style',"border-color:red; border-style: dotted; height: 50px;width: 50px");    // modif attribut style de div1
+			laDiv2.appendChild(laDiv1); // div1 mis en fils de div2
+		}
+	</script>
+	</head>
+	<body onload='init()'>
+		<div id='div2' style="border-color:black; border-style: solid; height: 80px;width: 80px;"></div> <!--modif style de div2-->
+	</body>
+</html>

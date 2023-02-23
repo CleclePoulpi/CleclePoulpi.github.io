@@ -1,0 +1,34 @@
+{"results":[ 
+    {
+        "id":3007609,
+        "name":"Lannion",
+        "latitude":48.73264,
+        "longitude":-3.45657,
+        "elevation":30.0,
+        "feature_code":"PPLA3",
+        "country_code":"FR",
+        "admin1_id":3030293,
+        "admin2_id":3023414,
+        "admin3_id":3007608,
+        "admin4_id":6453798,
+        "timezone":"Europe/Paris",
+        "population":21473,
+        "postcodes":["22300",
+            "22301 CEDEX",
+            "22302 CEDEX",
+            "22303 CEDEX",
+            "22304 CEDEX",
+            "22305 CEDEX",
+            "22306 CEDEX","22307 CEDEX","22308 CEDEX","22309 CEDEX"],
+        "country_id":3017382,
+        "country":"France",
+        "admin1":"Brittany",
+        "admin2":"Côtes-d'Armor",
+        "admin3":"Arrondissement de Lannion",
+        "admin4":"Lannion"},
+    {
+        "id":6299459,"name":"Lannion","latitude":48.75438,"longitude":-3.47166,"elevation":88.0,"feature_code":"AIRP","country_code":"FR","admin1_id":3030293,"admin2_id":3023414,"admin3_id":3007608,"admin4_id":6453798,"timezone":"Europe/Paris","country_id":3017382,"country":"France","admin1":"Brittany","admin2":"Côtes-d'Armor","admin3":"Arrondissement de Lannion","admin4":"Lannion"}],"generationtime_ms":0.70393085}
+
+
+
+        

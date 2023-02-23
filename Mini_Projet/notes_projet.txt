@@ -1,0 +1,32 @@
+mail : cedric.clavier@gmail.com
+
+
+Random User seulement fr : https://randomuser.me/api/?nat=fr
+/!\ pas les bonnes coordonnées -> utiliser le nom de la ville
+
+API pour transformer nom de ville en coordonnées :
+geocoding-api.open-meteo.com/v1/search?name=...
+
+
+Map :
+    mettre les infos de météo dans le popup du marqueur ? -> non, trop petit
+    -> les mettre en bas à droite
+
+    PB de placement des pins !! 
+        -> villes avec même nom, mais pas le bon pays à filtrer !!!
+        -> virer les DOM/TOM ? (avec timezone)
+        -> comment fare en sorte de ne pas prendre en compte le point si jamais la ville n'est pas compatible ??
+        -> SAINT PIERRE ET FORT DE FRANCE DE MES DEUX QUI FOUTENT LA MERDE (un qui passe et l'autre qui déconne)
+            -> changer ordre conditions
+                -> pas suffisant : ajout condition pour ne pas prendre en compte Fort de France
+
+tableau :
+    avoir 10 lignes instanciées dès le départ
+    faire une boucle en modulo 10 sur les lignes qui vont bien
+    page W3S : https://www.w3schools.com/jsref/coll_table_rows.asp 
+        var x = document.getElementById("myTable").rows[0].cells;
+        x[0].innerHTML = "NEW CONTENT";
+
+météo :
+    à partir nom latlong 
+    température et vitesse du vent

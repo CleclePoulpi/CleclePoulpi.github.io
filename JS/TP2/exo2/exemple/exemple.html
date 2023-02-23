@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Let's move!</title>
+</head>
+<body>
+	<fieldset>
+		<legend id="gameLegend">TRALALA...</legend>
+		<canvas id="arena" style="border: 1px solid #000000"></canvas>
+	</fieldset>
+</body>
+<script>
+	document.addEventListener("DOMContentLoaded",startGame);
+
+
+	const event = new Event('bang');
+
+
+	let intervalId; 
+	
+	let legend;
+	
+
+	let canvas;
+	let context; 
+	const canvasWidth = 100;
+	const canvasHeight = 100;
+
+	const fps = 40; // frame per seconds
+	const speedInPxPs = 100; // in px  per seconds
+	
+	const squareWidth = 10;
+	let squareX = 0;
+	let squareY = 10; 
+	let speedX = 0; 
+
+
+	function startGame(){
+		canvas = document.getElementById("arena");
+		canvas.setAttribute("width",canvasWidth);
+		canvas.setAttribute("height",canvasHeight);
+		context = canvas.getContext("2d");
+		legend = document.getElementById("gameLegend");
+		legend.addEventListener('bang', function (e) { 
+				e.target.innerHTML = "BANG! X: "+squareX; 	
+			}, false);
+		speedX = speedInPxPs / fps; //100px per seconds and 30fps => 3px per frame (approx)
+		intervalId = window.setInterval(gameLoop,1000/fps); // 30fps
+	}
+
+	function endGame(){
+		window.clearInterval(intervalId);	
+	}
+
+	function gameLoop(){
+		clearSquare();
+		updateSquare();
+		drawSquare();
+	}
+
+	function clearSquare(){
+		context.clearRect(squareX-1, squareY-1, squareWidth+2, squareWidth+2);
+	}
+
+	function updateSquare(){
+		if(squareX + squareWidth >= canvasWidth){
+			legend.dispatchEvent(event);
+			endGame();
+		} else {
+			squareX = squareX + speedX;
+		}
+	}
+
+	function drawSquare(){
+		context.fillRect(squareX, squareY, squareWidth, squareWidth);
+	}
+
+
+
+</script>
+</html>
