@@ -10,3 +10,20 @@
     height: 300px;
 }
 
+/* CSS table */
+table,th,td {
+    border: 1px solid;
+}
+
+td {
+    height: 24px;
+}
+
+table {
+    border-collapse: collapse;  
+    width: 100%;
+}
+
+#marqueur {
+    border : none;
+}

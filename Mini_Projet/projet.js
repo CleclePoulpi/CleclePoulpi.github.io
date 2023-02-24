@@ -43,20 +43,32 @@ function init_map() {
 // création de la structure du tableau des users
 function construc_tab(){
     let i;
-    for (i=0; i<10 ; i++){
-        var lig = tab.insertRow(0);
+
+    // ajout du header
+    var header = tab.createTHead();
+    var row = header.insertRow(0);
+    var h1 = row.insertCell(0);
+    var h2 = row.insertCell(1);
+    var h3 = row.insertCell(2);
+
+    // remplissage du header
+    h1.innerHTML = "<b>Prénom</b>";
+    h2.innerHTML = "<b>Nom</b>";
+    h3.innerHTML = "<b>Ville</b>";
+
+    // ajout des lignes
+    for (i=1; i<11 ; i++){
+        var lig = tab.insertRow(i);
         var c1 = lig.insertCell(0);
         var c2 = lig.insertCell(1);
         var c3 = lig.insertCell(2);
-        var c4 = lig.insertCell(3);
-        var c5 = lig.insertCell(4);
     }
 }
 
 // affichage des users
 async function randomUsers(){
     
-    let nb = 0;             // ligne du tableau à modifier
+    let nb = 1;             // ligne du tableau à modifier
     let initOk = false;     // tableau des marqueurs non initialisé
     let tour = 0;           // nombre de lignes du tableau des marqueurs initialisées
     let skip = false;       // user courant non passé
@@ -89,8 +101,6 @@ async function randomUsers(){
                     row[0].innerHTML = prenom;  
                     row[1].innerHTML = nom;
                     row[2].innerHTML = ville;
-                    row[3].innerHTML = lati;
-                    row[4].innerHTML = longi;
                     
                     let tempe;
                     let vent;
@@ -98,7 +108,7 @@ async function randomUsers(){
 
                     // gestion du tableau des marqueurs
                     if (initOk){                        // vérification que l'initialisation est terminée
-                        markers[nb].removeFrom(map);    // retirer le marqueur courant (car ne sera plus dans le tableau)
+                        markers[nb-1].removeFrom(map);    // retirer le marqueur courant (car ne sera plus dans le tableau)
                     }
 
                     // récupération de la météo
@@ -124,7 +134,7 @@ async function randomUsers(){
                     // popup du marqueur
                     var txt = getCodeMeteo(code_m);
                     marker.bindPopup("<b>"+ville+"</b><br>"+nom+" "+prenom+"<br>"+txt+"Température : "+tempe+" °C<br>Vitesse du vent : "+vent+"km/h<br>",keepInView = true).openPopup();
-                    markers[nb] = marker;                                       // ajout à la liste des marqueurs présents
+                    markers[nb-1] = marker;                                       // ajout à la liste des marqueurs présents
 
                 } else {            // si la ville n'est pas en France métropolitaine
                     skip = true;    // on passe l'utilisateur généré par l'API
@@ -139,8 +149,11 @@ async function randomUsers(){
             alert("HTTP-Error: " + resp.status);
         }
 
-        if (!skip){         // si on ne passe pas le user généré 
-            nb = (nb+1)%10; // incrémentation du numéro du user courant
+        if (!skip){             // si on ne passe pas le user généré 
+            nb = (nb+1)%11;     // incrémentation du numéro du user courant
+            if (nb === 0){      // pour ne pas modifier le header (en position 0)
+                nb = 1;
+            }   
         }
 
         if (!initOk && !skip) {          // si l'initialisation du tableau des marqueurs n'est pas finie et que le user n'est pas passé
@@ -168,8 +181,6 @@ async function calcLatLong(v){
         var k = 0;                      // indice de parcours
         var n = json["results"].length; // nombre de résultats possibles
 
-        console.log(json["results"]);
-
         // tant que le pays n'est pas Français et dans la timezone de Paris, et que l'indice k est valide
         while (!(json["results"][k].timezone === "Europe/Paris" && json["results"][k].country_code === "FR") && k<n){
             k++;
@@ -182,7 +193,7 @@ async function calcLatLong(v){
             var longi = json["results"][k].longitude;
    
         } else {    // si les résultats ne sont pas en France métropolitaine
-            console.log("skippé !")
+
             // on renvoie des valeurs vides
             lati ="";
             longi = "";
@@ -302,7 +313,7 @@ function getCodeMeteo(code){
             break;
     }
         
-    return "<table><tr><td><img src=\"./icones/"+code_img+".svg\" width=\"16\" height=\"16\"></td><td>"+nom+"</td></tr></table>"
+    return "<table id=\"marqueur\"><tr id=\"marqueur\"><td id=\"marqueur\"><img src=\"./icones/"+code_img+".svg\" width=\"16\" height=\"16\"></td><td id=\"marqueur\">"+nom+"</td></tr></table>"
     
 }
 

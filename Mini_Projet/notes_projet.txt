@@ -11,7 +11,7 @@ geocoding-api.open-meteo.com/v1/search?name=...
 
 TO DO :
     Infos supplémentaires en bas à droite -> au clic sur pop-up, rémanent
-    mise en forme tableau 
+X    mise en forme tableau 
     boutons
 
 
